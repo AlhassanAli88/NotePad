@@ -19,7 +19,7 @@ struct ContentView: View {
             VStack {
                 Text("Anteckningslistan")
                 //Spacer()
-                
+                Text("Test")
                 List{
                     
                     ForEach(myViewModel.notes){notes in
