@@ -21,9 +21,9 @@ struct ContentView: View {
                 //Spacer()
                 Text("Test")
                 List{
-                    
-                    ForEach(myViewModel.notes){notes in
-                        
+                    Section{
+                        ForEach(myViewModel.notes){notes in
+                            
                             NavigationLink{
                                 NoteView(titel: notes.titel!, note: notes.note!, viewModel: myViewModel, notes: notes)
                             }
@@ -32,10 +32,19 @@ struct ContentView: View {
                                 Text(notes.titel ?? "no titel")
                             }
                             
-     
+                            
+                        }.listRowBackground(
+                            Capsule()
+                                .fill(Color(red: 2, green: 2, blue: 0))
+                                .padding(4)
+                        
+                        
+                        )
                     }
+                    .listRowSeparator(.hidden)
                     
                 }
+                .scrollContentBackground(.hidden)
                 
                 
                 
